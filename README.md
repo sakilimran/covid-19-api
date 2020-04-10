@@ -1,4 +1,4 @@
-# Slim Covit 19 Coronavirus Live Data Api
+# Covit-19 Coronavirus Live Cases Data PHP REST API
 
 A PHP-based user-authenticated REST API by [S. M. Sakil Imran], extending the following project:
 * [Slim Eloquent REST Boilerplate Application](https://github.com/sakilimran/slim-eloquent-rest-boilerplate)
@@ -15,7 +15,7 @@ A PHP-based user-authenticated REST API by [S. M. Sakil Imran], extending the fo
 * `vendor/bin/phinx migrate` run initial database migration
 
 ## Run
-* `cd public` change working directory to public folder and run `localhost -S localhost:8000` via command line
+* `cd public` change working directory to public folder and run `php -S localhost:8000` via command line
 * or you can use Apache, set virtual host to *public* folder
 
 ## Tests
