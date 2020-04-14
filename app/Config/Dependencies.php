@@ -41,13 +41,9 @@ class Dependencies {
         $this->container['\App\Controllers\UserController'] = function($c) use ($app) {
             return new \App\Controllers\UserController($c->get('logger'), $c->get('db'), $c->get('validator'));
         };
-        // Todo
-        $this->container['\App\Controllers\TodoController'] = function($c) use ($app) {
-            return new \App\Controllers\TodoController($c->get('logger'), $c->get('db'), $c->get('validator'));
-        };
-        // Category
-        $this->container['\App\Controllers\CategoryController'] = function($c) use ($app) {
-            return new \App\Controllers\CategoryController($c->get('logger'), $c->get('db'), $c->get('validator'));
+        // Country Cases
+        $this->container['\App\Controllers\CountryController'] = function($c) use ($app) {
+            return new \App\Controllers\CountryController($c->get('logger'), $c->get('validator'));
         };
     }
 
