@@ -1,32 +1,13 @@
 # 2019 Novel Coronavirus COVID-19 (2019-nCoV) Live Cases Data PHP REST API
 
 This is a PHP-based user-authenticated REST API repository for the 2019 Novel Coronavirus COVID-19 (2019-nCoV) Live Cases Data 
-developed by [S. M. Sakil Imran](mailto:sakilcse7@gmail.com) from a data [repository](https://github.com/CSSEGISandData/COVID-19) provided by the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE).
+developed by [S. M. Sakil Imran](mailto:sakilcse7@gmail.com) from [WorldoMeters](https://www.worldometers.info/coronavirus/) data.
 This project is developed by extending the following project: 
 
 * [Slim Eloquent REST Boilerplate Application](https://github.com/sakilimran/slim-eloquent-rest-boilerplate)
 
-**Data Provided By:**
-* [Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE)](https://github.com/CSSEGISandData/COVID-19)
-
-<b>Data Sources:</b><br>
-* World Health Organization (WHO): https://www.who.int/ <br>
-* DXY.cn. Pneumonia. 2020. http://3g.dxy.cn/newh5/view/pneumonia.  <br>
-* BNO News: https://bnonews.com/index.php/2020/02/the-latest-coronavirus-cases/  <br>
-* National Health Commission of the People’s Republic of China (NHC): <br>
- http://www.nhc.gov.cn/xcs/yqtb/list_gzbd.shtml <br>
-* China CDC (CCDC): http://weekly.chinacdc.cn/news/TrackingtheEpidemic.htm <br>
-* Hong Kong Department of Health: https://www.chp.gov.hk/en/features/102465.html <br>
-* Macau Government: https://www.ssm.gov.mo/portal/ <br>
-* Taiwan CDC: https://sites.google.com/cdc.gov.tw/2019ncov/taiwan?authuser=0 <br>
-* US CDC: https://www.cdc.gov/coronavirus/2019-ncov/index.html <br>
-* Government of Canada: https://www.canada.ca/en/public-health/services/diseases/coronavirus.html <br>
-* Australia Government Department of Health: https://www.health.gov.au/news/coronavirus-update-at-a-glance <br>
-* European Centre for Disease Prevention and Control (ECDC): https://www.ecdc.europa.eu/en/geographical-distribution-2019-ncov-cases 
-* Ministry of Health Singapore (MOH): https://www.moh.gov.sg/covid-19
-* Italy Ministry of Health: http://www.salute.gov.it/nuovocoronavirus
-* 1Point3Arces: https://coronavirus.1point3acres.com/en
-* WorldoMeters: https://www.worldometers.info/coronavirus/
+**Data Source:**
+* [WorldoMeters](https://www.worldometers.info/coronavirus/)
 
 ## Installation
 * `git clone https://github.com/sakilimran/covit19api.git` clone git repo
@@ -39,10 +20,6 @@ This project is developed by extending the following project:
 ## Run
 * `cd public` change working directory to public folder and run `php -S localhost:8000` via command line
 * or you can use Apache, set virtual host to *public* folder
-
-## Tests
-Execute unit tests via PHPUnit by running `./vendor/bin/phpunit ./tests/`.  You can debug tests via XDebug by running `./phpunit-debug ./tests/` (use Git Bash if on Windows).
-This boilerplate's test suite features 100% code coverage out-of-the-box (see report in *./test/coverage/*).  To regenerate code coverage HTML report, run `./vendor/bin/phpunit --coverage-html ./tests/coverage/ --whitelist ./app/ ./tests/`
 
 ## API Documentation
 ### HTTP Codes
@@ -57,3 +34,9 @@ Endpoint | Parameters | Description
 `POST /users/login` | `username` *string* required<br>`password` *string* required | generates user access token
 ### Endpoints
 All RESTful API endpoints below require a `Authorization: Bearer xxxx` header set on the HTTP request, *xxxx* is replaced with token generated from the Authentication API above.
+
+Endpoint | Parameters | Description | Sample Output
+--- | --- | --- | ---
+`GET /all-cases` | *n/a* | lists total cases worldwide | `{"success":true,"data":{"title":"World","cases":2164963,"todayCases":78532,"deaths":144313,"todayDeaths":5694,"recovered":546227,"activeCases":1474423,"critical":57062}}`
+`GET /country-cases` | *n/a* | lists all cases by country | `{"success":true,"data":[{"country":"USA","cases":667572,"todayCases":19424,"deaths":33903,"todayDeaths":1315,"recovered":57189,"activeCases":576480,"critical":13369,"emoji":"🇺🇸"},{"country":"Spain","cases":182816,"todayCases":2157,"deaths":19130,"todayDeaths":318,"recovered":74797,"activeCases":88889,"critical":7371,"emoji":"🇪🇸"},".............."]}`
+`GET /country-cases/{name}` | *n/a* | lists all cases for any specific country | `{"success":true,"data":{"country":"Bangladesh","cases":1572,"todayCases":341,"deaths":60,"todayDeaths":10,"recovered":49,"activeCases":1463,"critical":1,"emoji":"\ud83c\udde7\ud83c\udde9"}}`
