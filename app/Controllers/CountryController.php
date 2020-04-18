@@ -26,11 +26,11 @@ class CountryController {
         $this->validator = $depValidator;
     }
 
-    // GET /all-cases
+    // GET /all
     // Lists world cases
     public function all(Request $request, Response $response)
     {
-        $this->logger->addInfo('GET /all-cases');
+        $this->logger->addInfo('GET /all');
 
         $crawler_data = $this->crawler();
 
@@ -54,10 +54,10 @@ class CountryController {
         }
     }
 
-    // GET /country-cases
+    // GET /countries
     // Lists all country cases
     public function countries(Request $request, Response $response) {
-        $this->logger->addInfo('GET /country-cases');
+        $this->logger->addInfo('GET /countries');
 
         $crawler_data = $this->crawler();
         $countries_data = Country::country_data($crawler_data);
@@ -75,10 +75,10 @@ class CountryController {
         }
     }
 
-    // GET /country-cases/{name}
+    // GET /countries/{name}
     // Retrieve specific country cases data by NAME
     public function find(Request $request, Response $response, $args) {
-        $this->logger->addInfo('GET /country-cases/'.$args['name']);
+        $this->logger->addInfo('GET /countries/'.$args['name']);
 
         $crawler_data = $this->crawler();
         $country_key = array_search(strval($args['name']), array_column($crawler_data, 0));

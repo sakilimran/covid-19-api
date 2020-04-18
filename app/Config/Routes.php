@@ -8,9 +8,9 @@ class Routes {
         $app->post('/users/login', '\App\Controllers\UserController:login');
 
         /* routing for covit-19 cases */
-        $app->get('/all-cases', '\App\Controllers\CountryController:all');
-        $app->get('/country-cases', '\App\Controllers\CountryController:countries');
-        $app->get('/country-cases/{name}', '\App\Controllers\CountryController:find');
+        $app->get('/all', '\App\Controllers\CountryController:all');
+        $app->get('/countries', '\App\Controllers\CountryController:countries');
+        $app->get('/countries/{name}', '\App\Controllers\CountryController:find');
 
     }
 }
