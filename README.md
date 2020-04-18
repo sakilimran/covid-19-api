@@ -10,8 +10,8 @@ This project is developed by extending the following project:
 * [WorldoMeters](https://www.worldometers.info/coronavirus/)
 
 ## Installation
-* `git clone https://github.com/sakilimran/covit19api.git` clone git repo
-* `cd covit19api` change working directory to root project folder
+* `git clone https://github.com/sakilimran/covid19api.git` clone git repo
+* `cd covid19api` change working directory to root project folder
 * `composer install` install dependencies
 * create `Config.php` file from this: `app/Config/Config-default.php` with your configurations
 * create `phinx.yml` file from this: `phinx-default.yml` with your configurations

@@ -1,8 +1,8 @@
 {
-    "name": "sakilimran/covit19api",
-    "description": "A PHP based REST API for Covit-19 Coronavirus Live Cases Data",
-    "keywords": ["Covit-19", "Coronavirus", "Covit19", "Slim", "microframework", "rest", "router", "psr7", "monolog", "eloquent", "phpunit", "pimple", "api", "php"],
-    "homepage": "http://github.com/sakilimran/covit19api",
+    "name": "sakilimran/covid19api",
+    "description": "A PHP based REST API for Covid-19 Coronavirus Live Cases Data",
+    "keywords": ["Covid-19", "Coronavirus", "Covid19", "Slim", "microframework", "rest", "router", "psr7", "monolog", "eloquent", "phpunit", "pimple", "api", "php"],
+    "homepage": "http://github.com/sakilimran/covid19api",
     "license": "MIT",
     "authors": [
         {
