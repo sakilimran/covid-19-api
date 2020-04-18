@@ -13,7 +13,7 @@ class Country extends Model {
     // Get country flag emoji by $country
     public function generateEmoji($country)
     {
-        $flag = file_get_contents(__DIR__ .'/../Config/flags.json');
+        $flag = file_get_contents(__DIR__ . '/../../data/flags.json');
         return collect(json_decode($flag, true))->firstWhere('name', $country)['emoji'];
     }
 
