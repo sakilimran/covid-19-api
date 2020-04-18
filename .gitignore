@@ -9,3 +9,4 @@ app/Config/Config.php
 # IDE Files
 /nbproject/private/
 .idea/*
+.well-known/*
