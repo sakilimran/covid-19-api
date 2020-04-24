@@ -13,8 +13,8 @@ This project is developed by extending the following project:
 * [World Health Organization - WHO](https://covid19.who.int/) - For timeline (date-wise) data
 
 ## Installation
-* `git clone https://github.com/sakilimran/covid19api.git` clone git repo
-* `cd covid19api` change working directory to root project folder
+* `git clone https://github.com/sakilimran/covid-19-api.git` clone git repo
+* `cd covid-19-api` change working directory to root project folder
 * `composer install` install dependencies
 * create `Config.php` file from this: `app/Config/Config-default.php` with your configurations
 * create `phinx.yml` file from this: `phinx-default.yml` with your configurations
