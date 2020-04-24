@@ -39,9 +39,6 @@ class Country extends Model {
                 $data['emoji'] = Country::generateEmoji($item[0]);
                 return $data;
             })
-            ->sortBy('deaths', 'desc')
-            ->sortBy('cases', 'desc')
-            ->sortBy('recovered', 'desc')
             ->values()
             ->all();
     }
