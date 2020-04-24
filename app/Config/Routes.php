@@ -11,6 +11,7 @@ class Routes {
         $app->get('/all', '\App\Controllers\CountryController:all');
         $app->get('/countries', '\App\Controllers\CountryController:countries');
         $app->get('/countries/{name}', '\App\Controllers\CountryController:find');
-
+        $app->get('/timeline', '\App\Controllers\CountryController:timeline');
+        $app->get('/timeline/{country_code}', '\App\Controllers\CountryController:country_timeline');
     }
 }
