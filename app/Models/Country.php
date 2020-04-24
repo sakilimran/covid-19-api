@@ -11,7 +11,7 @@ class Country extends Model {
     ];
 
     // Get country flag emoji by $country
-    public function generateEmoji($country)
+    public static function generateEmoji($country)
     {
         $flag = file_get_contents(__DIR__ . '/../../data/flags.json');
         return collect(json_decode($flag, true))->firstWhere('name', $country)['emoji'];
@@ -25,7 +25,7 @@ class Country extends Model {
     }
 
     // Get all country data
-    public function country_data($data = null)
+    public static function country_data($data = null)
     {
         return collect($data)
             ->slice(9)
