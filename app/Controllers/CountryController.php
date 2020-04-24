@@ -90,7 +90,7 @@ class CountryController {
         foreach (static::$country_titles as $key => $value) {
             $data[$value] = $value == 'country' ? $item[$key] : intval($item[$key]);
         }
-        $data['emoji'] = Country::generateEmoji($item[0]);
+        $data['flag_emoji'] = Country::generateEmoji($item[0]);
 
         if ($data) {
             return $response->withJson([
