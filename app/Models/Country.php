@@ -36,7 +36,7 @@ class Country extends Model {
                 foreach (static::$titles as $key => $value) {
                     $data[$value] = in_array($value, ['country', 'emoji']) ? $item[$key] : intval($item[$key]);
                 }
-                $data['emoji'] = Country::generateEmoji($item[0]);
+                $data['flag_emoji'] = Country::generateEmoji($item[0]);
                 return $data;
             })
             ->values()
