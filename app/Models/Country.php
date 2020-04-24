@@ -17,6 +17,13 @@ class Country extends Model {
         return collect(json_decode($flag, true))->firstWhere('name', $country)['emoji'];
     }
 
+    // Get country name by $code
+    public static function generateCountryName($code)
+    {
+        $flag = file_get_contents(__DIR__ . '/../../data/flags.json');
+        return collect(json_decode($flag, true))->firstWhere('code', $code)['name'];
+    }
+
     // Get all country data
     public function country_data($data = null)
     {
