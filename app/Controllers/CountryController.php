@@ -39,7 +39,7 @@ class CountryController {
 
         $data =array();
         foreach (static::$world_cases_titles as $key => $value) {
-            $data[$value] = $value == 'title' ? $item[$key] : intval($item[$key]);
+            $data[$value] = $value == 'title' ? $item[$key+1] : intval($item[$key+1]);
         }
 
         if ($data) {
@@ -82,15 +82,15 @@ class CountryController {
         $this->logger->addInfo('GET /countries/'.$args['name']);
 
         $crawler_data = $this->crawler();
-        $country_key = array_search(strval($args['name']), array_column($crawler_data, 0));
+        $country_key = array_search(strval($args['name']), array_column($crawler_data, 1));
 
         $item = $crawler_data[$country_key+1];
 
         $data =array();
         foreach (static::$country_titles as $key => $value) {
-            $data[$value] = $value == 'country' ? $item[$key] : intval($item[$key]);
+            $data[$value] = $value == 'country' ? $item[$key+1] : intval($item[$key+1]);
         }
-        $data['flag_emoji'] = Country::generateEmoji($item[0]);
+        $data['flag_emoji'] = Country::generateEmoji($item[1]);
 
         if ($data) {
             return $response->withJson([

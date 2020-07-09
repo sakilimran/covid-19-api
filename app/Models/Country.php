@@ -30,13 +30,13 @@ class Country extends Model {
         return collect($data)
             ->slice(9)
             ->reject(function ($item) {
-                return $item[0] == 'Total:';
+                return $item[1] == 'Total:';
             })
             ->map(function ($item) {
                 foreach (static::$titles as $key => $value) {
-                    $data[$value] = in_array($value, ['country', 'emoji']) ? $item[$key] : intval($item[$key]);
+                    $data[$value] = in_array($value, ['country', 'emoji']) ? $item[$key+1] : intval($item[$key+1]);
                 }
-                $data['flag_emoji'] = Country::generateEmoji($item[0]);
+                $data['flag_emoji'] = Country::generateEmoji($item[1]);
                 return $data;
             })
             ->values()
